@@ -10,6 +10,7 @@
 		CF087B562295CBF4007CF2EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B552295CBF4007CF2EB /* Extensions.swift */; };
 		CF087B582295CD47007CF2EB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B572295CD47007CF2EB /* CustomTextField.swift */; };
 		CF087B5A2295CF61007CF2EB /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B592295CF61007CF2EB /* PaddedTextField.swift */; };
+		CF087B5C2296077A007CF2EB /* preview_clip.gif in Resources */ = {isa = PBXBuildFile; fileRef = CF087B5B2296077A007CF2EB /* preview_clip.gif */; };
 		CF6B5C4A2284C49000C47FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C492284C49000C47FAC /* AppDelegate.swift */; };
 		CF6B5C4C2284C49000C47FAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C4B2284C49000C47FAC /* ViewController.swift */; };
 		CF6B5C4F2284C49000C47FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6B5C4D2284C49000C47FAC /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		CF087B552295CBF4007CF2EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CF087B572295CD47007CF2EB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CF087B592295CF61007CF2EB /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		CF087B5B2296077A007CF2EB /* preview_clip.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preview_clip.gif; sourceTree = "<group>"; };
 		CF6B5C462284C49000C47FAC /* CustomKeyboardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6B5C492284C49000C47FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF6B5C4B2284C49000C47FAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				CF6B5C492284C49000C47FAC /* AppDelegate.swift */,
 				CF087B552295CBF4007CF2EB /* Extensions.swift */,
+				CF087B5B2296077A007CF2EB /* preview_clip.gif */,
 				CF6B5C602284C5B900C47FAC /* Model */,
 				CF6B5C5D2284C58400C47FAC /* Controller */,
 				CF6B5C672284CF6100C47FAC /* View */,
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6B5C542284C49600C47FAC /* LaunchScreen.storyboard in Resources */,
+				CF087B5C2296077A007CF2EB /* preview_clip.gif in Resources */,
 				CF6B5C512284C49600C47FAC /* Assets.xcassets in Resources */,
 				CF6B5C4F2284C49000C47FAC /* Main.storyboard in Resources */,
 			);

@@ -23,6 +23,7 @@ class CustomInputView: UIView {
         let textField = CustomTextField(padding: Size.getInsets())
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .white
+        textField.placeholder = "Write Message..."
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         addSubview(textField)
         return textField
