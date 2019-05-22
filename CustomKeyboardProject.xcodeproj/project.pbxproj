@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF087B562295CBF4007CF2EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B552295CBF4007CF2EB /* Extensions.swift */; };
+		CF087B582295CD47007CF2EB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B572295CD47007CF2EB /* CustomTextField.swift */; };
+		CF087B5A2295CF61007CF2EB /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF087B592295CF61007CF2EB /* PaddedTextField.swift */; };
 		CF6B5C4A2284C49000C47FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C492284C49000C47FAC /* AppDelegate.swift */; };
 		CF6B5C4C2284C49000C47FAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C4B2284C49000C47FAC /* ViewController.swift */; };
 		CF6B5C4F2284C49000C47FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6B5C4D2284C49000C47FAC /* Main.storyboard */; };
 		CF6B5C512284C49600C47FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6B5C502284C49600C47FAC /* Assets.xcassets */; };
 		CF6B5C542284C49600C47FAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6B5C522284C49600C47FAC /* LaunchScreen.storyboard */; };
+		CF6B5C5C2284C57F00C47FAC /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C5B2284C57F00C47FAC /* ExampleViewController.swift */; };
+		CF6B5C5F2284C5B400C47FAC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C5E2284C5B400C47FAC /* Message.swift */; };
+		CF6B5C642284C73600C47FAC /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C632284C73600C47FAC /* MessageBoard.swift */; };
+		CF6B5C662284CF5C00C47FAC /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C652284CF5C00C47FAC /* CustomInputView.swift */; };
+		CF6B5C692284D37700C47FAC /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B5C682284D37700C47FAC /* MessageTableViewCell.swift */; };
+		CF9A48372288C42900046F3A /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A48362288C42900046F3A /* CustomTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF087B552295CBF4007CF2EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CF087B572295CD47007CF2EB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CF087B592295CF61007CF2EB /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		CF6B5C462284C49000C47FAC /* CustomKeyboardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6B5C492284C49000C47FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF6B5C4B2284C49000C47FAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +34,12 @@
 		CF6B5C502284C49600C47FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF6B5C532284C49600C47FAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF6B5C552284C49600C47FAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF6B5C5B2284C57F00C47FAC /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		CF6B5C5E2284C5B400C47FAC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CF6B5C632284C73600C47FAC /* MessageBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
+		CF6B5C652284CF5C00C47FAC /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		CF6B5C682284D37700C47FAC /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		CF9A48362288C42900046F3A /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +73,46 @@
 			isa = PBXGroup;
 			children = (
 				CF6B5C492284C49000C47FAC /* AppDelegate.swift */,
-				CF6B5C4B2284C49000C47FAC /* ViewController.swift */,
+				CF087B552295CBF4007CF2EB /* Extensions.swift */,
+				CF6B5C602284C5B900C47FAC /* Model */,
+				CF6B5C5D2284C58400C47FAC /* Controller */,
+				CF6B5C672284CF6100C47FAC /* View */,
 				CF6B5C4D2284C49000C47FAC /* Main.storyboard */,
 				CF6B5C502284C49600C47FAC /* Assets.xcassets */,
 				CF6B5C522284C49600C47FAC /* LaunchScreen.storyboard */,
 				CF6B5C552284C49600C47FAC /* Info.plist */,
 			);
 			path = CustomKeyboardProject;
+			sourceTree = "<group>";
+		};
+		CF6B5C5D2284C58400C47FAC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF6B5C4B2284C49000C47FAC /* ViewController.swift */,
+				CF6B5C5B2284C57F00C47FAC /* ExampleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF6B5C602284C5B900C47FAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF6B5C5E2284C5B400C47FAC /* Message.swift */,
+				CF6B5C632284C73600C47FAC /* MessageBoard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF6B5C672284CF6100C47FAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF6B5C652284CF5C00C47FAC /* CustomInputView.swift */,
+				CF087B572295CD47007CF2EB /* CustomTextField.swift */,
+				CF087B592295CF61007CF2EB /* PaddedTextField.swift */,
+				CF9A48362288C42900046F3A /* CustomTableView.swift */,
+				CF6B5C682284D37700C47FAC /* MessageTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +187,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6B5C4C2284C49000C47FAC /* ViewController.swift in Sources */,
+				CF087B582295CD47007CF2EB /* CustomTextField.swift in Sources */,
+				CF6B5C5F2284C5B400C47FAC /* Message.swift in Sources */,
 				CF6B5C4A2284C49000C47FAC /* AppDelegate.swift in Sources */,
+				CF6B5C662284CF5C00C47FAC /* CustomInputView.swift in Sources */,
+				CF087B562295CBF4007CF2EB /* Extensions.swift in Sources */,
+				CF087B5A2295CF61007CF2EB /* PaddedTextField.swift in Sources */,
+				CF9A48372288C42900046F3A /* CustomTableView.swift in Sources */,
+				CF6B5C692284D37700C47FAC /* MessageTableViewCell.swift in Sources */,
+				CF6B5C642284C73600C47FAC /* MessageBoard.swift in Sources */,
+				CF6B5C5C2284C57F00C47FAC /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
