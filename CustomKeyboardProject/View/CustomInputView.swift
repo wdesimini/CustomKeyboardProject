@@ -100,7 +100,7 @@ class CustomInputView: UIView {
             textField.topAnchor.constraint(equalTo: topAnchor),
 //            attachButton.leftAnchor.constraint(equalTo: leftAnchor),
 //            textField.leadingAnchor.constraint(equalTo: attachButton.trailingAnchor),
-            textField.leadingAnchor.constraint(equalTo: trailingAnchor),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
             sendButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
             sendButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             ])
@@ -137,7 +137,7 @@ extension CustomInputView {
         static let keyboardHeight: CGFloat = 64
         
         static func getInsets() -> UIEdgeInsets {
-            let textFieldInsetValue: CGFloat = 5
+            let textFieldInsetValue: CGFloat = 12
             
             return UIEdgeInsets(
                 top: textFieldInsetValue,

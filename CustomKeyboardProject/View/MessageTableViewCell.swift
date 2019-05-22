@@ -49,7 +49,7 @@ class MessageTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             timeLabel.heightAnchor.constraint(equalToConstant: Size.timeSize),
             timeLabel.widthAnchor.constraint(lessThanOrEqualTo: contentView.widthAnchor, multiplier: Size.timeMaxWidthRatio),
-            timeLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            timeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.timePadding),
             
             replyButton.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: Size.buttonHeightRatio),
             replyButton.widthAnchor.constraint(equalTo: replyButton.heightAnchor),
@@ -77,5 +77,6 @@ extension MessageTableViewCell {
         static let padding: CGFloat = 24
         static let timeSize: CGFloat = 24
         static let timeMaxWidthRatio: CGFloat = 0.5
+        static let timePadding: CGFloat = 6
     }
 }
