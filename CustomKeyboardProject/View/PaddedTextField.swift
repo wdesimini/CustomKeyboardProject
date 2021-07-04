@@ -11,8 +11,7 @@ import UIKit
 
 
 class PaddedTextField: UITextField {
-    
-    var padding: UIEdgeInsets
+    let padding: UIEdgeInsets
     
     init(frame: CGRect = .zero, padding: UIEdgeInsets) {
         self.padding = padding
@@ -24,14 +23,14 @@ class PaddedTextField: UITextField {
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
+        bounds.inset(by: padding)
     }
     
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
+        bounds.inset(by: padding)
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
+        bounds.inset(by: padding)
     }
 }

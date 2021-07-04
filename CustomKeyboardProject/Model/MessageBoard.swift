@@ -8,24 +8,33 @@
 
 import Foundation
 
-
-final class MessageBoard {
+struct MessageBoard {
     
-    static let shared = MessageBoard()
+    // MARK: IVars
     
     private var messages = Set<Message>()
     
-    private init() {}
-    
-    func addMessage(message: Message) {
-        messages.insert(message)
-    }
-}
-
-extension MessageBoard {
+    // MARK: CVars
     
     var sortedMessages: [Message] {
-        return Array(messages).sorted(by: { $0.timestamp < $1.timestamp } )
+        Array(messages).sorted(
+            by: { $0.timestamp < $1.timestamp }
+        )
+    }
+    
+    // MARK: Updates
+    
+    private mutating func add(message: Message) {
+        messages.insert(message)
+    }
+    
+    mutating func add(messageWithBody body: String) {
+        add(
+            message: Message(
+                body: body,
+                identifier: UUID(),
+                timestamp: Date().timeIntervalSince1970
+            )
+        )
     }
 }
-

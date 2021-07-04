@@ -8,40 +8,36 @@
 
 import Foundation
 
-
-class Message {
-    // primary
-    let timestamp: Double
+struct Message: Hashable {
+    
+    // MARK: IVars
+    
     let body: String
+    let identifier: UUID
+    let parentIdentifier: UUID?
+    let timestamp: Double
     
-    // secondary
-    let parentMessage: Message?
+    // MARK: Init
     
-    init(timestamp: Double, body: String, parentMessage: Message? = nil) {
-        self.timestamp = timestamp
+    init(
+        body: String,
+        identifier: UUID,
+        parentIdentifier: UUID? = nil,
+        timestamp: Double
+    ) {
         self.body = body
-        self.parentMessage = parentMessage
-    }
-}
-
-extension String {
-    
-    func createMessageFromBody(parentMessage: Message? = nil) -> Message {
-        return Message(
-            timestamp: Double(NSDate().timeIntervalSince1970),
-            body: self,
-            parentMessage: parentMessage)
+        self.identifier = identifier
+        self.parentIdentifier = parentIdentifier
+        self.timestamp = timestamp
     }
     
-}
-
-extension Message: Hashable {
+    // MARK: Hashable
+    
     static func == (lhs: Message, rhs: Message) -> Bool {
-        return lhs.timestamp == rhs.timestamp && lhs.body == rhs.body
+        lhs.identifier == rhs.identifier
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(timestamp)
-        hasher.combine(body)
+        hasher.combine(identifier)
     }
 }

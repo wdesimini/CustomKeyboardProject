@@ -9,20 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         #warning("TESTING: automatically going to inputView 1")
         segueToExampleController(keyboard: CustomInputView())
     }
     
+    // MARK: Actions
+    
     @IBAction func keyboardOneTapped(_ sender: Any) {
         // show first custom keyboard
         segueToExampleController(keyboard: CustomInputView())
     }
     
+    // MARK: Updates
+    
     func segueToExampleController(keyboard: CustomInputView) {
-        navigationController?.pushViewController(ExampleViewController(), animated: true)
+        navigationController?.pushViewController(
+            ExampleViewController(), animated: true
+        )
     }
 }
 

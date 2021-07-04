@@ -11,13 +11,8 @@ import UIKit
 
 
 class CustomTextField: PaddedTextField {
-    
     override var canBecomeFirstResponder: Bool {
-        return true
-    }
-    
-    override var canResignFirstResponder: Bool {
-        return true
+        true
     }
 }
 

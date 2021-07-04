@@ -12,44 +12,25 @@ import UIKit
 // https://stackoverflow.com/a/46510833/10582681
 
 protocol CustomInputViewDelegate: class {
-    func sendMessage()
+    func sendTapped(text: String)
 }
 
 class CustomInputView: UIView {
     
-    lazy var textField = createTextField()
+    // MARK: IVars
     
-    private func createTextField() -> CustomTextField {
-        let textField = CustomTextField(padding: Size.getInsets())
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.textColor = .white
-        textField.placeholder = "Write Message..."
-        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        addSubview(textField)
-        return textField
-    }
+    weak var delegate: CustomInputViewDelegate?
     
     private lazy var attachButton = createButton(
         image: UIImage(named: "Attach_icon"),
-        selector: #selector(attachTapped))
-    
-    @objc func attachTapped() {
-        
-    }
+        selector: #selector(attachTapped)
+    )
     
     private lazy var sendButton = createButton(
         image: UIImage(named: "Send_icon"),
         selector: #selector(sendMessage),
-        color: .blue)
-    
-    @objc func sendMessage() {
-        delegate?.sendMessage()
-        
-        DispatchQueue.main.async {
-            self.textField.text = ""
-            self.setSendButtonIsHidden()
-        }
-    }
+        color: .blue
+    )
     
     private func createButton(image: UIImage? = nil, selector: Selector, color: UIColor? = nil) -> UIButton {
         let button = UIButton()
@@ -60,62 +41,76 @@ class CustomInputView: UIView {
         button.addTarget(self, action: selector, for: .touchUpInside)
         addSubview(button)
         
-        NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalTo: button.heightAnchor),
-            button.heightAnchor.constraint(equalTo: textField.heightAnchor)
-            ])
-        
         return button
     }
     
-    weak var delegate: CustomInputViewDelegate?
+    let textField: CustomTextField = {
+        let textField = CustomTextField(padding: Size.getInsets())
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.textColor = .white
+        textField.placeholder = "Write Message..."
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        return textField
+    }()
     
-    init() {
-        super.init(frame: .zero)
+    // MARK: Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .darkGray
         isUserInteractionEnabled = true
-        textField.delegate = self
         
-        DispatchQueue.main.async {
-            self.backgroundColor = .darkGray
-            self.setViews()
-        }
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    private func setViews() {
-        autoresizingMask = .flexibleHeight
-        
-        // center views
-        subviews.forEach {
-            NSLayoutConstraint.activate([
-                $0.centerYAnchor.constraint(equalTo: centerYAnchor),
-                ])
-        }
+    
+    // MARK: Overrides
+    
+    override var intrinsicContentSize: CGSize {
+        return .zero
+    }
+    
+    // MARK: Lifecycle
+    
+    private func configureSubviews() {
+        textField.delegate = self
+        addSubview(textField)
         
         layoutSubviews()
         
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: topAnchor),
-//            attachButton.leftAnchor.constraint(equalTo: leftAnchor),
-//            textField.leadingAnchor.constraint(equalTo: attachButton.trailingAnchor),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            sendButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
+            sendButton.heightAnchor.constraint(equalTo: heightAnchor),
+            sendButton.widthAnchor.constraint(equalTo: heightAnchor),
+            sendButton.topAnchor.constraint(equalTo: topAnchor),
             sendButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            ])
+            
+            textField.heightAnchor.constraint(equalTo: heightAnchor),
+            textField.topAnchor.constraint(equalTo: topAnchor),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor),
+        ])
         
         setSendButtonIsHidden()
     }
-
-    override var intrinsicContentSize: CGSize {
-        return .zero
+    
+    // MARK: Actions
+    
+    @objc func attachTapped() {
+        #warning("tbd - add attach functionality")
+    }
+    
+    @objc func sendMessage() {
+        delegate?.sendTapped(text: textField.text!)
+        textField.text = ""
+        setSendButtonIsHidden()
     }
 }
 
+// MARK: UITextFieldDelegate
+
 extension CustomInputView: UITextFieldDelegate {
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         setSendButtonIsHidden()
     }

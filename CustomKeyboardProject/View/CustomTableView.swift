@@ -11,12 +11,13 @@ import UIKit
 
 
 class CustomTableView: UITableView {
-    
-    let keyboardView = CustomInputView()
+    public var keyboardView: CustomInputView?
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         keyboardDismissMode = .interactive
+        layoutSubviews()
+        keyboardView = CustomInputView(frame: CGRect(origin: .zero, size: CGSize(width: frame.width, height: 64)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +25,7 @@ class CustomTableView: UITableView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        DispatchQueue.main.async {
-            self.keyboardView.textField.resignFirstResponder()
-        }
+        keyboardView?.textField.resignFirstResponder()
     }
 
     override var canBecomeFirstResponder: Bool {
